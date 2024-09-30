@@ -1,0 +1,1802 @@
+@font-face {
+  font-family: yekan;
+  src: url(../fonts/BYekan.woff);
+}
+/* کد ریست */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  direction: rtl;
+  font-family: yekan;
+}
+/* تنظیمات اولیه لینک */
+a {
+  text-decoration: none;
+}
+/* تنظیمات اولیه لیست ها */
+li {
+  list-style: none;
+}
+/* تنظیمات اولیه خط */
+section.hr {
+  width: 100%;
+  height: 1px;
+  border: 1px solid #f0f0f1;
+  margin-bottom: 30px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  min-height: 100vh;
+}
+/* هدر */
+header {
+  display: flex;
+  flex-flow: column;
+  position: sticky;
+  background-color: #fff;
+  top: 0;
+  z-index: 99;
+}
+/* بنر */
+header > div.banner > a {
+  display: flex;
+  height: 60px;
+}
+/* اندازه عکس بنر */
+header > div.banner > a > img {
+  width: 100%;
+  height: 60px;
+  margin: 0 auto;
+}
+/* تنظیمات اولیه بخش سرچ و عضویت */
+header > div.search-register {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  max-width: 1536px;
+  margin: 0 auto;
+}
+/* تضیمات اولیه سرچ و لوگو */
+header > div.search-register > div.search-logo {
+  width: 60%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+/* اندازه لوگوی دیجیکالا */
+header > div.search-register > div.search-logo > div.logo > a > img {
+  width: 200px;
+  height: 30px;
+}
+/* تنظیمات اولیه سرچ */
+header > div.search-register > div.search-logo > div.search {
+  display: flex;
+  align-items: center;
+}
+/* حالت دادن به سرچ */
+header > div.search-register > div.search-logo > div.search > form {
+  background-color: #f0f0f1;
+  border-radius: 8px;
+  width: 600px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+/* تعیین کردن اندازه اینپوت */
+header > div.search-register > div.search-logo > div.search > form > input {
+  width: 512px;
+  height: 26px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+/* رنگ ایکون سرچ */
+header
+  > div.search-register
+  > div.search-logo
+  > div.search
+  > form
+  > input
+  > span {
+  color: #a1a3a8;
+}
+/* فاصله دادن بین آیتم های خرید و عضویت  */
+header > div.search-register > div.register {
+  width: 200px;
+  height: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+/* حالت دادن به باکس عضویت  */
+header > div.search-register > div.register > div.member > a {
+  border: 1px solid #e0e0e2;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px;
+  text-decoration: none;
+  color: #424750;
+}
+/* حالت دادن به سبد خرید */
+header > div.search-register > div.register > div.buy > a > span {
+  color: #424750;
+  transform: scaleX(-1);
+  font-size: 20px;
+  border-left: 2px solid black;
+  padding-left: 50%;
+}
+/* حالت اولیه به منو */
+header > nav {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  max-width: 1536px;
+  margin: 0 auto;
+}
+/* حالت اولیه دادن به بخش راست منو */
+header > nav > div.menu {
+  width: 60%;
+  position: relative;
+}
+/* ساب منو نمایش نده  به همراه تنظیمات اولیه */
+header > nav > div.menu > ul > li > div.sub-menu {
+  width: 0;
+  height: 0;
+  transition: all 150ms linear;
+  position: absolute;
+  top: 42px;
+  right: 10px;
+}
+
+/* اندازه اولیه ساب منو به همراه اسکرول خوردنش */
+header > nav > div.menu > ul > li.hover-menu:hover > div.sub-menu {
+  width: 200px;
+  height: 460px;
+  overflow-y: scroll;
+  direction: ltr;
+}
+/* در حالت اولیه هیچ متنی از ساب منو نمایش نده */
+header > nav > div.menu > ul > li.hover-menu > div.sub-menu > a {
+  display: none;
+  height: 51px;
+  color: #3f4064;
+  background-color: #f5f5f5;
+}
+/* تنظیمات اولیه منوی ساب منو  */
+header > nav > div.menu > ul > li.hover-menu > div.menu-of-menu {
+  width: 0;
+  height: 0;
+  transition: all 100ms linear;
+  overflow-y: scroll;
+  direction: ltr;
+  /* transform-origin: top; */
+  background-color: #fff;
+  position: absolute;
+  right: 210px;
+  top: 42px;
+  /* background-color: green; */
+}
+/* هیچی از منوی ساب منو نشون نده */
+header > nav > div.menu > ul > li.hover-menu > div.menu-of-menu > a {
+  display: none;
+  color: #81858b;
+}
+
+/* وقتی منو هاور شد منوی ساب منو چقدر باشه */
+header > nav > div.menu > ul > li.hover-menu:hover > div.menu-of-menu {
+  width: 680px;
+  height: 460px;
+  color: green;
+}
+/* وقتی منو و سابمنو هاور شد نمایش بده متن هاشو */
+header > nav > div.menu > ul > li.hover-menu:hover > div.menu-of-menu > a,
+header > nav > div.menu > ul > li.hover-menu:hover > div.menu-of-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+}
+/* تنظیمات اولیه متن های سابمنو */
+header > nav > div.menu > ul > li.hover-menu > div.sub-menu:hover > a,
+header > nav > div.menu > ul > li.hover-menu:hover > div.sub-menu > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* هاور شدن متن های ساب منو */
+header > nav > div.menu > ul > li.hover-menu > div.sub-menu > a:hover {
+  color: crimson;
+  background-color: #fff;
+}
+/* تنظیمات منو */
+header > nav > div.menu{
+  /* background-color: green; */
+  width: 65%;
+}
+header > nav > div.menu > ul {
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+/* تنشیمات اولیه لیست */
+header > nav > div.menu > ul > li {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  color: #a1a3a8;
+  position: relative;
+}
+/* خط سمت راست برای دسته بندی کالا و تخفیف */
+header > nav > div.menu > ul > li.left-border {
+  border-left: 1px solid #e0e0e2;
+  padding-left: 20px;
+}
+/* خط قرمز زیر منو */
+header > nav > div.menu > ul > li:hover {
+  border-bottom: 2px solid crimson;
+}
+/* تنظیمات اولیه متن های منو */
+header > nav > div.menu > ul > li > a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #424750;
+  font-size: 12px;
+  gap: 10px;
+}
+/* جلوگیری از دوخط شدن متن ها */
+header > nav > div.menu > ul > li > a > p {
+  white-space: nowrap;
+}
+/* تنظیمات اولیه مکان    */
+header > nav > div.location > a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #424750;
+}
+
+section.main {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* تنظیمات بخش ساپورت  */
+section.main > section.support > a {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: crimson;
+  position: fixed;
+  bottom: 45px;
+  right: 55px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 2;
+}
+/* تنظیمات  بخش سوپر مارکت */
+section.main > section.buy > a {
+  width: 130px;
+  height: 53px;
+  border-radius: 50px;
+  background-color: #029a49;
+  position: fixed;
+  bottom: 45px;
+  left: 15px;
+  font-size: 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  z-index: 99;
+  transition: all linear 150ms;
+}
+/* بزرگ شدن اندازه سوپرمارکت */
+section.main > section.buy > a:hover {
+  width: 282px;
+}
+/* اضافه شدن متن به سوپر مارکت */
+section.main > section.buy > a:hover > p::after {
+  content: " | تنوع بالا و پرتخفیف";
+  white-space: nowrap;
+}
+/* شروع استوری */
+/* اندازه کلی استوری */
+section.main > section.story {
+  width: 90%;
+  height: 140px;
+  margin: 0 auto;
+  
+  /* background-color: lime;   */
+  max-width: 1400px;
+}
+/* اندازه سوییپر ها */
+section.main > section.story > div.swiper {
+  width: 100%;
+  height: 100%;
+}
+/* تنظیمات کلی استوری ها */
+section.main
+  > section.story
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide {
+  width: fit-content;
+  height: 200px;
+  text-align: center;
+  font-size: 18px;
+  /* background: orange;   */
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+/* پدری که باعث گرد شدن تصویر میشه */
+section.main
+  > section.story
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide
+  > a
+  > div.circle {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  /* background-color: gray; */
+  padding: 3px;
+  border: purple 2px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* متن زیر استوری */
+section.main
+  > section.story
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide
+  > a
+  > div.text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+  font-weight: 800;
+  color: #23254e;
+  /* background-color: purple; */
+  height: 20%;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* گرد کردن عکس استوری */
+section.main
+  > section.story
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide
+  > a
+  > div.circle
+  > img {
+  /* display: block; */
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+/* زمان های 4 استوری اول */
+section.main
+  > section.story
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide
+  > a
+  > p.time {
+  position: absolute;
+  top: 60px;
+  right: 22px;
+  background-color: #fdecf5;
+  color: #e03e97;
+  border: 3px solid white;
+  border-radius: 8px;
+  font-size: 14px;
+}
+/* از بین بردن ایکون قبلی و بعدی */
+section.main > section.story > div.swiper > div.swiper-button-next::after,
+section.main > section.story > div.swiper > div.swiper-button-prev::after {
+  display: none;
+}
+/* طرح جدید ایکون بعدی و قبلی */
+section.main > section.story > div.swiper > div.swiper-button-next,
+section.main > section.story > div.swiper > div.swiper-button-prev {
+  color: #424750;
+  background-color: white;
+  border: 2px solid #e0e0e2;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+/* پایان بخش استوری */
+
+/* شروع اسلایدر */
+section.slider {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  max-width: 1919px;
+}
+section.slider > div.swiper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+section.slider > div.swiper > div.swiper-wrapper > div.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.slider > div.swiper > div.swiper-wrapper > div.swiper-slide > a > img {
+  display: block;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+section.main > section.slider > div.swiper > div.swiper-button-next::after,
+section.main > section.slider > div.swiper > div.swiper-button-prev::after {
+  display: none;
+}
+section.main > section.slider > div.swiper > div.swiper-button-next,
+section.main > section.slider > div.swiper > div.swiper-button-prev {
+  color: #424750;
+  background-color: white;
+  border: 2px solid #e0e0e2;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+}
+section.main > section.digikala-service {
+  height: 120px;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  /* background-color: gray; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+section.main > section.digikala-service > a {
+  color: #3f4064;
+  width: 82px;
+  height: 103px;
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+}
+section.main > section.digikala-service > a > img {
+  width: 52px;
+  height: 52px;
+}
+section.main > section.digikala-service > a > span {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: #f0f0f1;
+  color: #a1a3a8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section.main > section.digikala-service > a > p {
+  font-size: 12px;
+  padding: 0 16px;
+}
+/* پایان اسلایدر */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+section.main > div.shegeft {
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 90%;
+  height: 284px;
+  display: flex;
+  align-items: center;
+}
+section.main > div.shegeft > div.swiper {
+  width: 100%;
+  height: 90%;
+  background-color: crimson;
+  border-radius: 8px;
+  padding: 10px 20px;
+}
+
+section.main > div.shegeft > div.swiper > div.swiper-wrapper > div.br-left {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+section.main > div.shegeft > div.swiper > div.swiper-wrapper > div.br-left > a {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-items: center;
+  height: 100%;
+}
+section.main > div.shegeft > div.swiper > div.swiper-wrapper > div.br-right {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+section.main > div.shegeft > div.swiper > div.swiper-wrapper > div.swiper-slide {
+  background-color: white;
+  /* background-color: green; */
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  padding-right: 0;
+}
+section.main > div.shegeft
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide
+  > a
+  > div.more {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+section.main > div.shegeft
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide
+  > a
+  > div.more
+  > i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid #19bfd3;
+  font-size: 32px;
+  color: #19bfd3;
+  width: 52px;
+  height: 52px;
+}
+section.main > div.shegeft
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide
+  > a
+  > div.more
+  P {
+  color: #3f4064;
+  font-size: 14px;
+}
+section.main > div.shegeft > div.swiper > div.swiper-wrapper > div.swiper-slide > a > div.img {
+  width: 100%;
+  height: auto;
+}
+section.main > div.shegeft
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide
+  > a
+  > div.img
+  img {
+width: 132px;
+height: 132px;
+}
+section.main > div.shegeft
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide
+  > a
+  > div.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  font-size: 12px;
+  color: #62666d;
+}
+section.main > div.shegeft
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide
+  > a
+  > div.new-price {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+section.main > div.shegeft
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide
+  > a
+  > div.new-price
+  > p {
+  font-size: 12px;
+  color: #fff;
+  background-color: crimson;
+  border-radius: 10px;
+  padding: 0 7px;
+}
+section.main > div.shegeft
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide
+  > a
+  > div.new-price
+  > div.price {
+  display: flex;
+}
+section.main > div.shegeft
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide
+  > a
+  > div.new-price
+  > div.price
+  > p {
+  font-size: 14px;
+  color: #3f4064;
+}
+section.main > div.shegeft
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide
+  > a
+  > div.new-price
+  > div.price
+  > img {
+  width: 16px;
+  height: 16px;
+}
+section.main > div.shegeft
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide
+  > a
+  > div.old-price {
+  display: flex;
+  justify-content: end;
+  margin-left: 18px;
+}
+section.main > div.shegeft
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide
+  > a
+  > div.old-price
+  > p {
+  font-size: 12px;
+  text-decoration: line-through;
+  color: #c0c2c5;
+}
+section.main > div.shegeft > div.swiper > div.swiper-wrapper section.main > div.shegeft-right {
+  background-color: crimson;
+}
+
+section.main > div.shegeft > div.swiper > div.swiper-wrapper > div.right{
+  background-color: crimson;
+}
+
+section.main > div.shegeft > div.swiper > div.swiper-wrapper > div.right>a.img{
+  width: 88px;
+  height: 88px;
+  /* background-color: lightgreen; */
+}
+
+section.main > div.shegeft > div.swiper > div.swiper-wrapper > div.right> a > img{
+  width: 100%;
+}
+
+section.main > div.shegeft > div.swiper > div.swiper-wrapper > div.right>a.timer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: 15px;
+  color: white;
+}
+
+section.main > div.shegeft > div.swiper > div.swiper-wrapper > div.right> a.timer > div.squere {
+  width: 26px;
+  height: 26px;
+  background-color: #fff;
+  color: black;
+  border-radius: 5px;
+}
+
+section.main > div.shegeft > div.swiper > div.swiper-wrapper > div.right>a.img2{
+  width: 80px;
+  height: 80px;
+  /* background-color: lightgreen; */
+}
+section.main > div.shegeft > div.swiper > div.swiper-wrapper > div.right>a.more{
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  gap: 5px;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* شروع تخفیف شگفت انگیز سوپرمارکتی */
+/* تنظیم اولیه */
+section.main > section.super-market {
+  width: 90%;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 110px;
+  max-width: 1380px;
+  background: url(../media/section5/freshPattern.svg) no-repeat #ebeded;
+  object-fit: cover;
+  padding: 16px 40px;
+}
+/* لوگو های تخفیف سوپرمارکتی */
+section.main > section.super-market > div.logo > a.imges {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  /* background-color: gray; */
+}
+/* بخش راست سوپر مارکتی */
+section.main > section.super-market > div.logo {
+  /* background-color: lime; */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+/* بخش 50% تخفیف */
+section.main > section.super-market > div.logo > a.takhfif {
+  background-color: #029a49;
+  color: white;
+  border-radius: 50px;
+  padding: 5px;
+  word-spacing: 1px;
+}
+/* بخش سمت چپ سوپر مارکتی */
+section.main > section.super-market > div.product {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* background-color: indianred; */
+}
+/* کنار هم نشستن عکس ها */
+section.main > section.super-market > div.product > div.img {
+  display: flex;
+  /* background-color: gray; */
+}
+/* تنظیم کلی عکس ها */
+section.main > section.super-market > div.product > div.img > a {
+  display: flex;
+  /* background-color: lightsalmon; */
+  width: 70px;
+  flex-flow: wrap;
+  position: relative;
+}
+/* تنظیم تکی عکس ها */
+section.main > section.super-market > div.product > div.img > a > img {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  transform: scale(1.1);
+}
+/* بخش بیش از 20 کالا */
+section.main > section.super-market > div.product > div.takhfif > a {
+  display: flex;
+  background-color: #fff;
+  align-items: center;
+  border-radius: 50px;
+  height: fit-content;
+  padding: 10px;
+  gap: 0 10px;
+  color: #029a49;
+}
+/* تنظیمات تخفیف */
+section.main > section.super-market > div.product > div.img > a > p {
+  background-color: #d32f2f;
+  color: white;
+  border-radius: 50px;
+  padding: 0px 8px;
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+  transform: scale(0.8);
+}
+/* پایان شگفت انگیز سوپرمارکتی */
+
+/* شروع تبلیغات (4عکس) */
+/* تنظیم کلی عکس ها */
+section.main > section.tablighat {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1400px;
+}
+/* تنظیم تکی عکس ها  */
+section.main > section.tablighat > img {
+  width: 24%;
+  height: 100%;
+  border-radius: 15px;
+  cursor: pointer;
+}
+/* پایان تبلیغات 4 عکس */
+
+/* شروع دسته بندی */
+/* تنظیم اولیه دسته بندی */
+section.main > section.daste {
+  margin-top: 2%;
+  width: 75%;
+  max-width: 1400px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  /* background-color: linen; */
+  justify-content: space-between;
+  gap: 40px;
+}
+/* متن اصلی دسته بندی */
+section.main > section.daste > div.header {
+  font-size: 21px;
+  font-weight: lighter;
+}
+/* تنظیم اولیه تمامی عکس ها */
+section.main > section.daste > div.imgs {
+  width: 100%;
+}
+/* تنظیم کلی عکس های دسته بندی */
+section.main > section.daste > div.imgs > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  /* background-color: gray;   */
+}
+/* تنظیم ارتفاع متن زیر عکس محصول */
+section.main > section.daste > div.imgs > div > a {
+  width: 107px;
+  height: 160px;
+  color: #0c0c0c;
+  font-size: 14px;
+  /* background-color: orange; */
+}
+/* اندازه عکس محصول */
+section.main > section.daste > div.imgs > div > a > img {
+  width: 100px;
+  height: 100px;
+}
+/* پایان دسته بندی */
+
+/* شروع تبلیغات */
+/* تنظیمات اولیه عکس */
+section.main > section.ads-pic {
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  /* background-color: gray; */
+}
+section.main > section.ads-pic > a {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+/* تنظیمات تکی عکس */
+section.main > section.ads-pic > a > img {
+  width: 98%;
+  height: 100%;
+  border-radius: 15px;
+}
+/* پایان تبلیغات */
+
+/* شروع برند های محبوب */
+/* تنظیمات اولیه */
+section.main > section.populars {
+  width: 90%;
+  max-width: 1400px;
+  /* height: 174px; */
+  /* background-color: gray;   */
+  padding: 36px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+  border: 1px solid #e0e0e2;
+  border-radius: 8px;
+}
+/* متن سکشن */
+section.main > section.populars > div.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 15px;
+  font-size: 21px;
+  width: 100%;
+  /* background-color: purple; */
+}
+/* رنگ آیکون متن سکشن */
+section.main > section.populars > div.header > span {
+  color: gold;
+}
+تنظیمات سوییپر section.main > section.populars > div.brands > div.swiper {
+  width: 100%;
+  height: 100%;
+  /* background-color: lime; */
+}
+/* تنظیمات کلی عکس های سوییپر */
+section.main
+  > section.populars
+  > div.brands
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* اندازه و مدل عکس ها */
+section.main
+  > section.populars
+  > div.brands
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide
+  > a
+  > img {
+  display: block;
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+}
+/* خط بین محصولات */
+section.main
+  > section.populars
+  > div.brands
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide
+  > a
+  > img.border {
+  border-left: 1px solid #e0e0e2;
+  padding-left: 15px;
+}
+/* پایان برند های محبوب */
+
+/* 
+بخش های برای شما (شامل 2 بخش)یکی بخش گوشی بخش دوم ساعت هوشمند
+ */
+/* تنظیمات کلی */
+section.main > section.favorite {
+  /* background-color: blue; */
+  display: flex;
+  align-items: center;
+  width: 90%;
+  max-width: 1400px;
+}
+/* کنار هم قرار گرفتن 4 تا دیو  */
+section.main > section.favorite > div {
+  /* background-color: cadetblue; */
+  width: 25%;
+  border: 1px solid #e0e0e2;
+  padding: 8px 20px;
+}
+/* رنگ متن بر اساس سلیقه شما */
+section.main > section.favorite > div > div.header > p {
+  color: #81858b;
+}
+
+/* گوشه های سمت راست گرد بشه */
+section.main > section.favorite > div.part1 {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+section.main > section.favorite > div.part4 {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+/* گوشه های سمت چپ گرد بشه */
+section.main > section.favorite > div > div.products {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  flex-flow: wrap;
+  /* background-color: red; */
+}
+/* وسط رفتن عکس های کادر */
+section.main > section.favorite > div > div.products > a {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: gray; */
+}
+
+/* اندازه عکس های کادر */
+section.main > section.favorite > div > div.products > a > img {
+  width: 130px;
+  height: 130px;
+}
+
+/* خط های جدا کننده 4 تا عکس */
+section.main > section.favorite > div > div.products > a.border-bottom-left {
+  border-bottom: 1px solid #e0e0e2;
+  border-left: 1px solid #e0e0e2;
+}
+/* خط های جدا کننده 4 تا عکس */
+section.main > section.favorite > div > div.products > a.border-top-right {
+  border-top: 1px solid #e0e0e2;
+  border-right: 1px solid #e0e0e2;
+}
+/* متن مشاهده بیاد کنار هم و بره وسط */
+section.main > section.favorite > div > div.more > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #19bfd3;
+  margin-top: 15px;
+  gap: 10px;
+  /* background-color: purple; */
+}
+/* پایان بخش برای شما */
+
+/* بکگراند دیجیکلاب */
+section.main > section.digiclub {
+  background: linear-gradient(to left, #007295, #35a6c8);
+  height: 87px;
+  width: 90%;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  max-width: 1400px;
+}
+
+/* بخش سمت چپ دیجیکلاب */
+section.main > section.digiclub > div.imges {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  /* background-color: gray; */
+  gap: 15px;
+}
+
+/* متن های کنار عکس دیجیکلاب */
+section.main > section.digiclub > div.imges > a {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  /* background-color: purple; */
+}
+/* تنشیم اندازه عکس ها */
+section.main > section.digiclub > div.imges > a > img {
+  width: 168px;
+  height: 60px;
+  object-fit: cover;
+}
+/* فاصله گرفتن متن دیجی کلاب از سمت چپ */
+section.main > section.digiclub > div.imges > a > p {
+  padding-right: 16px;
+  color: #0c0c0c;
+}
+/* رنگ آیکون های نزدیک متن */
+section.main > section.digiclub > div.imges > a > p > i {
+  color: #00bfd6;
+}
+
+/* پرفروش ترین */
+
+section.hot-sales {
+  display: flex;
+  justify-content: center;
+  /* background-color: #a42c2c; */
+  border: 1px solid #e0e0e2;
+  border-radius: 8px;
+  flex-direction: column;
+  height: 403px;
+  max-width: 1400px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* شروع بخش پرفروش و داغ ترین چند ساعت گذشته */
+
+section.hot-sales > div.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+  width: 80%;
+  height: 44px;
+  /* background-color: #008000; */
+  font-size: 18px;
+}
+/* آیکون */
+section.hot-sales > div.text > i {
+  color: #f9a825;
+}
+
+/* محصولات  */
+
+section.hot-sales > div.swiper {
+  width: 100%;
+  height: 100%;
+  /* background-color: #808080; */
+}
+
+/* تراز کردن محصولات */
+
+section.hot-sales > div.swiper > div.swiper-wrapper > .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* background: #ffffff; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* تراز کردن آیتم های هر محصول در ستون */
+section.hot-sales
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide
+  > div.items {
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: column;
+  padding: 0 15px;
+}
+
+/* تراز کردن یک یک محصولات در ستون */
+
+section.hot-sales
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide
+  > div.items
+  > a.product {
+  height: 25%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: start;
+}
+
+/* خط کشیدن زیر محصول اول و دوم */
+
+section.hot-sales
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide
+  > div.items
+  > a.border {
+  border-bottom: 1px solid #e0e0e2;
+  padding-bottom: 15px;
+}
+
+/* اندازه هر عکس */
+
+section.hot-sales
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide
+  > div.items
+  > a.product
+  > img {
+  width: 86px;
+  height: 86px;
+}
+
+/* اندازه هر عدد */
+
+section.hot-sales
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide
+  > div.items
+  > a.product
+  > p.num {
+  font-size: 26px;
+  color: #19bfd3;
+}
+
+/* اندازه هر متن */
+
+section.hot-sales
+  > div.swiper
+  > div.swiper-wrapper
+  > div.swiper-slide
+  > div.items
+  > a.product
+  > p.text {
+  font-size: 12px;
+  font-weight: 900;
+  color: #3f4064;
+  width: 45%;
+}
+
+/* پایان بخش پرفروش و داغ ترین چند ساعت گذشته */
+
+/* شروع محصولات منتخب */
+
+section.main > section.selected {
+  /* قالب کلی */
+  width: 90%;
+  height: 812px;
+  border: 1px solid #e0e0e2;
+  border-radius: 8px;
+  /* background-color: green; */
+  max-width: 1400px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+/* متن  */
+section.main > section.selected > h3 {
+  padding: 2% 0;
+  display: flex;
+  align-items: center;
+  /* background-color: green; */
+}
+
+/* ایکون */
+
+section.main > section.selected > h3 > i {
+  padding-left: 10px;
+  color: #ef4056;
+}
+
+/* قالب هر عکس */
+
+section.main > section.selected > div.imgs {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  /* margin: auto; */
+  padding: 0 15px;
+  height: 100%;
+  width: 100%;
+  /* background-color: gray; */
+}
+
+/* ترازکردن هر بخش */
+
+section.main > section.selected > div.imgs > div {
+  height: 31%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 25px;
+  /* background-color: green; */
+}
+
+/* نشانه گر موس به حالت اشاره  */
+
+section.main > section.selected > div.imgs > div > div {
+  /* background-color: purple; */
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* قیمت نهایی و تخفیف */
+
+section.main > section.selected > div.imgs > div > div > div.text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: red; */
+}
+/* طراحی بخش تخفیف */
+section.main > section.selected > div.imgs > div > div > div.text > span {
+  background-color: #d32f2f;
+  border-radius: 30px;
+  padding: 1px 8px;
+  font-size: 12px;
+  color: white;
+}
+/* طراحی متن قیمت */
+section.main > section.selected > div.imgs > div > div > div.text > p {
+  color: #3f4064;
+  font-size: 16px;
+}
+/* طراحی متن بدون تخفیف */
+section.main > section.selected > div.imgs > div > div > p {
+  margin-right: 40%;
+  text-decoration: line-through;
+  color: #c0c2c5;
+}
+
+/* اندازه هر عکس */
+
+section.main > section.selected > div.imgs > div > div > img {
+  width: 150px;
+  height: 150px;
+  /* background-color: lime; */
+}
+
+/* بردر پایینی */
+
+section.main > section.selected > div.imgs > div.border-B {
+  border-bottom: 1px solid #e0e0e2;
+}
+
+/* بردر چپ */
+
+section.main > section.selected > div.imgs > div > div.border-L {
+  border-left: 1px solid #e0e0e2;
+  padding-left: 2%;
+}
+
+/* اتمام محصولات منتخب */
+
+/* تبلیغ بنر */
+
+section.main > section.ads > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* اندازه عکس */
+section.main > section.ads > a > img {
+  width: 90%;
+  border-radius: 15px;
+  max-width: 1555px;
+}
+/* بخش خواندنی  */
+section.main > section.digimag {
+  width: 90%;
+  border-radius: 8px;
+  display: flex;
+  flex-flow: column;
+  max-width: 1400px;
+  margin-bottom: 40px;
+}
+/* فاصله دادن بین خواندنی و مطالب بیشتر */
+section.main > section.digimag > div.text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+/* رنگ و اندازه مطالب دیجیکالا مگ */
+section.main > section.digimag > div.text > a {
+  color: #19bfd3;
+  font-size: 14px;
+}
+/* استایل به تکست خواندنی ها */
+section.main > section.digimag > div.text > p {
+  font-size: 16px;
+}
+/* کنار هم اوردن عکس  مجله ها */
+section.main > section.digimag > div.img {
+  display: flex;
+  justify-content: space-between;
+}
+/* متون زیر عکس و بردر دور آیتم ها */
+section.main > section.digimag > div.img > a {
+  border: 1px solid #e0e0e2;
+  border-radius: 8px;
+  width: 24%;
+  color: #0c0c0c;
+  font-weight: lighter;
+}
+
+/* اندازه عکس ها */
+section.main > section.digimag > div.img > a > img {
+  width: 100%;
+  height: 201px;
+  border-radius: 8px 8px 0 0;
+}
+
+/* اتمام سکشن ها (بخش اصلی ) */
+/* شروع فوتر */
+/* تنظیمات اصلی فوتر */
+footer {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 0 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+/* تنظیمات اولیه ایکون دیجیکالا و بازگشت به بالا */
+footer > section.footer-logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* اندازه لوگوی دیجیکالا  */
+footer > section.footer-logo > img {
+  width: 195px;
+  height: 30px;
+}
+/* تنظیمات بازگشت به بالا */
+footer > section.footer-logo > a {
+  border: 1px solid #a1a3a8;
+  color: #a1a3a8;
+  border-radius: 8px;
+  padding: 8px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+/* متن تلفن پشتیبان  و پاسخگویی */
+footer > section.about {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 20px;
+  margin-bottom: 30px;
+  font-size: 12px;
+}
+/* تنظیمات  تحویل اکسپرس وغیره */
+footer > section.whyus {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 50px;
+}
+/* متن زیر عکس های تحویل اکسپرس */
+footer > section.whyus > a {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  color: #3f4064;
+}
+/* شروع منوی فوتر دیجیکالا */
+footer > section.menu-footer {
+  display: flex;
+  justify-content: space-around;
+  gap: 5%;
+  width: 100%;
+  margin-bottom: 35px;
+}
+/* فضای منوی فوتر */
+footer > section.menu-footer > div {
+  width: 25%;
+}
+/* هدر هر بخش */
+footer > section.menu-footer > div > p {
+  color: #3f4064;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+/* فاصله دادن لیست های زیر هدر */
+footer > section.menu-footer > div > ul > li {
+  margin-bottom: 10px;
+}
+/* رنگ دادن به متن های زیر هدر */
+footer > section.menu-footer > div > ul > li > a {
+  color: #81858b;
+}
+footer > section.menu-footer > div.part4 {
+  display: flex;
+  flex-flow: column;
+  gap: 10%;
+}
+/* ایکون های سمت چپ اینستا و توییتر  */
+footer > section.menu-footer > div.part4 > div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 30px;
+}
+/* رنگ دادن به آیکون ها */
+footer > section.menu-footer > div.part4 > div > a {
+  color: #a1a3a8;
+}
+/* استایل دادن به فرم */
+footer > section.menu-footer > div.part4 > form {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+/* استایل دادن به بخش ایمیل شما */
+footer > section.menu-footer > div.part4 > form > input[type="text"] {
+  width: 261px;
+  height: 41px;
+  background-color: #f0f0f1;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  padding: 0 8px;
+}
+/* استایل دادن به دکمه ثبت */
+footer > section.menu-footer > div.part4 > form > input[type="submit"] {
+  width: 48px;
+  height: 48px;
+  background-color: #e0e0e2;
+  color: white;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  padding: 0 8px;
+}
+/* پایان منوی فوتر */
+/* شروع بخش دانلود دیجیکالا */
+footer > section.download {
+  width: 100%;
+  height: 76px;
+  background-color: #3c4b6d;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px;
+  margin-bottom: 30px;
+}
+/* لوگو کوچیک دیجیکالا و متن */
+footer > section.download > div.right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+/* اندازه دادن به لوگو کوچیک دیجیکالا */
+footer > section.download > div.right > img {
+  width: 44px;
+  height: 44px;
+}
+/* استایل دادن به متن */
+footer > section.download > div.right > p {
+  font-size: 21px;
+  color: white;
+}
+/* استایل دادن به بخش سمت چپ */
+footer > section.download > div.left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+/* استایل دادن به دانلود از بازار و مایکت و سیب اپ */
+footer > section.download > div.left > div.img {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/* تعیین اندازه عکس های بازار و مایکت و سیب اپ */
+footer > section.download > div.left > div.img > img {
+  width: 142px;
+  height: 44px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+/* استایل دادن به سه نقطه */
+footer > section.download > div.left > div.more {
+  width: 42px;
+  height: 44px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* پایان دانلود */
+/* شروع بخش e-namad */
+footer > section.digikala {
+  display: flex;
+  width: 100%;
+  align-self: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+/* بخش متن ها */
+footer > section.digikala > div.right {
+  width: 70%;
+  color: #62666d;
+}
+/* مشاهده بیشتر */
+footer > section.digikala > div.right > a {
+  margin-top: 15px;
+  color: #19bfd3;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+/* استایل دادن به عکس های e-namad */
+footer > section.digikala > div.left > a > img {
+  width: 90px;
+  height: 90px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e2;
+  padding: 15px;
+  margin-right: 10px;
+}
+/* پایان بخش e-namad */
+/* بخش کپی رایت */
+footer > section.copyright {
+  margin-bottom: 32px;
+  color: #81858b;
+  font-size: 15px;
+}
+/* بخش های دیگر تجاری دیجیکالا */
+section.bgc-gray {
+  width: 100%;
+  height: 160px;
+  background-color: #f0f0f1;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+}
+/* عکس های بالایی */
+section.bgc-gray > div.top {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 1500px;
+  margin: 0 auto;
+  /* background-color: red; */
+}
+
+section.bgc-gray > div > img {
+  border-right: 3px solid #e0e0e2;
+  /* background-color: blue; */
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+section.bgc-gray > div > img.border-non {
+  border: none;
+}
+
+section.bgc-gray > section.hr {
+  border: 1px solid #e0e0e2;
+}
+
+section.bgc-gray > div.bottom {
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: 50px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
